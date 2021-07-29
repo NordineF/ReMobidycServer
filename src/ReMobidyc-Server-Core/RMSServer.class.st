@@ -186,7 +186,7 @@ RMSServer >> registerRoutes [
 					put: 'Content-Type,Authorization' ];
 		GET: '/' -> '<h1> reMobidycServer API V0.0.1</h1>';
 		output: #html;
-		OPTIONS: '/api/register' -> '';
+		OPTIONS: '/api/*' -> '';
 		POST: '/api/register' -> (Send message: #registerSimulation: to: self);
 		GET: '/api/runs/' -> (Send message: #getSimulations: to: self);
 		GET: '/api/runs/<id:IsInteger>'
